@@ -209,7 +209,7 @@
                             background: #fff;
                             padding: 10px 20px;
                             border-radius: 0 10px 10px 10px;
-                            max-width: 60%;
+                            max-width: max-content;
                         }
                         img{
                             width: 50%;
@@ -221,14 +221,14 @@
                         .messageContent{
                             align-items: flex-end;
                             img{
-                                width: 50%;
+                                // width: 50%;
                                 border-radius: 10px 0px 10px 10px;
                             }
                             p{
                                 background: #8da4f1;
                                 color: #fff;
                                 border-radius: 10px 0px 10px 10px;
-                                max-width: 60%;
+                                max-width: max-content;
                             }
                         }
                     }
