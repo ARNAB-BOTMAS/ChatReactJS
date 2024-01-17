@@ -13,7 +13,7 @@ import './scss/chats.scss';
 import './scss/phone.scss';
 
 // import Design from './components/Design';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from './contex/AuthContext';
 import { useContext } from 'react';
 
@@ -29,19 +29,19 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Routes>
-          {/* <Route path='/' element={<UnderManu />}/> */}
-          <Route path='/chats' element={
-          <ProtectedRoute>
-            <ChatPage />
-          </ProtectedRoute>}/>
-          <Route path='/' element={<HomePage />}/>
+          <Route path='/' index element={<HomePage />}/>
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path='/chats' element={
+              <ProtectedRoute>
+                <ChatPage />
+              </ProtectedRoute>
+          }/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
