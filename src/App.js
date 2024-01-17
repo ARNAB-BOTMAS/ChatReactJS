@@ -1,10 +1,8 @@
-import RegisterPage from './pages/RegisterPage';
-import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
-import NotFoundPage from './pages/NotFoundPage';
-// import Home from './pages/Home';
-import ChatPage from './pages/ChatPage';
-// import UnderManu from './pages/UnderManu';
+import RegisterPage from '../src/pages/RegisterPage';
+import LoginPage from '../src/pages/LoginPage';
+import HomePage from '../src/pages/HomePage';
+import NotFoundPage from '../src/pages/NotFoundPage';
+import ChatPage from '../src/pages/ChatPage';
 import './scss/register.scss';
 import './scss/login.scss';
 import './scss/home.scss';
