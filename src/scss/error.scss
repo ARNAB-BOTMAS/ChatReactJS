@@ -1,0 +1,20 @@
+.desktopError{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .errorWrapper{
+        width: 70vw;
+    }
+}
+
+.desktopManu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // background: aqua;
+    .manuWrapper{
+        width: 45vw;
+    }
+}

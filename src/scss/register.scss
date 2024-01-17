@@ -1,0 +1,162 @@
+@mixin mobile{
+    @media screen and (max-width:480px) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media screen and (max-width:1200px) {
+        @content;
+    }
+}
+.desktopUpperReg{
+    background: url(../img/bannerBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    .desktopBackReg{
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        color: #fff;
+        font-size: xx-large;
+        // background: #DCF2F1;
+        z-index: 1;
+        button{
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: x-large;
+            transition: all 0.3s;
+        }
+        button:hover{
+            transform: scale(1.5);
+            @include mobile{
+                transform: none;
+            }
+        }
+    }
+    .desktopFormReg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // color: #DCF2F1;
+        // background-color: #7FC7D9;
+        width: 30%;
+        @include mobile{
+            width: 80%;
+        }
+    
+        .desktopWarapp{
+            background: #DCF2F1;
+            // position: fixed;
+            width: 100%;
+            padding: 30px 60px;
+            border-radius: 10px;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 0 30px rgba(255, 184, 3, 0.573);
+            color: #000;
+            @include mobile{
+                padding: 20px 30px;
+            }
+            .logo{
+                font-size: 30px;
+                // border-bottom: 1px solid #000;
+            }
+    
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .error-message {
+                    color: red;
+                    opacity: 1;
+                    transition: color 0.3s, opacity 0.3s;
+                  }
+                  
+                  .error-message-hidden {
+                    opacity: 0;
+                  }
+                .profilepic{
+                    display: none;
+                }
+                input{
+                    padding: 15px 5px;
+                    border: none;
+                    border-bottom: 1px solid #000;
+                    background: #DCF2F1;
+                    &::placeholder{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 15px;
+                        color: #000;
+                    }
+                }
+                label{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #000;
+                    cursor: pointer;
+                    .desktop-profile{
+                        width: 50px;
+                        transition: all 0.3s;
+                    }
+                }
+                label:hover{
+                    .desktop-profile{
+                        transform: scale(1.112);
+                        @include mobile{
+                            transform: none;
+                        }
+                    }
+                    @include mobile{
+                        transform: none;
+                    }
+                }
+                button{
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                    padding: 20px;
+                    transition: all 0.3s;
+                    background: #7FC7D9;
+                }
+                button:hover{
+                    transform: scale(1.05);
+                    background-color: rgb(89, 49, 246);
+                    color: azure;
+                    @include mobile{
+                        transform: none;
+                    }
+                }
+            }
+            p{
+                .goto{
+                    user-select: none; /* Standard syntax */
+                    -webkit-user-select: none; /* Safari and older versions of Chrome and Edge */
+                    -moz-user-select: none; /* Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                    cursor: pointer;
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+        
+    }
+}
