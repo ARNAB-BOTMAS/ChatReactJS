@@ -46,27 +46,28 @@
             }
         }
 
-        .search {
-            .searchForm {
-                input {
-                    width: 90%;
-                    border: none;
-                    outline: none;
-                    background: #7FC7D9;
-                    padding: 10px; /* Adjusted padding for better visibility */
-                }
-            }
-        }
-
         .sidebar {
             width: 90%;
             height: 100vh;
-            background: #7FC7D9;
+            background: #7077A1;
             position: absolute;
 
             .search{
                 padding: 10px 5px;
-                border-bottom: 1px solid gray;
+                border-bottom: 1px solid #2D3250;
+                .searchForm {
+                    input {
+                        width: 90%;
+                        border: none;
+                        outline: none;
+                        background: #7077A1;
+                        color: #2D3250;
+                        padding: 10px;
+                        &::placeholder{
+                            color: #2D3250;
+                        }
+                    }
+                }
                 .error-message-hidden{
                     display: none;
                 }
@@ -171,8 +172,8 @@
                 overflow-x: hidden;
 
                 /* Hide both vertical and horizontal scrollbars */
-                scrollbar-width: thin;
-                scrollbar-color: transparent transparent;
+                // scrollbar-width: thin;
+                // scrollbar-color: transparent transparent;
 
                 /* Webkit (Chrome, Safari) specific styles to hide the scrollbar */
                 &::-webkit-scrollbar {
