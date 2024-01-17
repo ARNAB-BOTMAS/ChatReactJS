@@ -11,7 +11,7 @@ import './scss/chats.scss';
 import './scss/phone.scss';
 
 // import Design from './components/Design';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from './contex/AuthContext';
 import { useContext } from 'react';
 
@@ -27,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
         <Routes>
           <Route path='/' index element={<HomePage />}/>
           <Route path="/register" element={<RegisterPage />} />
@@ -39,7 +38,6 @@ function App() {
           }/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }
