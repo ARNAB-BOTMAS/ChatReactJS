@@ -1,10 +1,13 @@
 import Design from "../components/Design2";
+import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
+    const navigate = useNavigate();
+    
     const login = () =>{
-        window.location.href='/login';
+        navigate('/login');
     }
     const register = () =>{
-        window.location.href='/register';
+        navigate('/register');
     }
     return(
         <div className="desktopHome">
