@@ -64,6 +64,25 @@
             background: #7FC7D9;
             position: absolute;
 
+            .search{
+                padding: 10px 5px;
+                border-bottom: 1px solid gray;
+                .error-message-hidden{
+                    display: none;
+                }
+                .userChat{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    img{
+                        width: 60px;
+                        height: 60px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
             .chats {
                 .userChat {
                     display: flex;
@@ -111,7 +130,7 @@
                         background: none;
                         border: none;
                         left: 20px;
-                        font-size: 20px; /* Adjusted font size for better visibility */
+                        font-size: 30px; /* Adjusted font size for better visibility */
                     }
                 }
 
@@ -236,14 +255,25 @@
                     display: flex;
                     align-items: center;
                     gap: 15px;
-                    .inputfile{
-                        display: none;
+                    label{
+                        // border: 1px solid #ccc;
+                        display: inline-block;
+                        padding: 1px 1px;
+                        cursor: pointer;
                     }
+                    .inputfile{
+                        display: none; /* Hide the default file input */
+                    }
+                    .inputfile:not(:focus) {
+                        outline: none; /* Remove default focus outline */
+                        border-color: #666; /* Change border color when not focused */
+                      }
                     button{
                         width: 100px;
                         height: 60px;
                         border: none;
                         background: #365486;
+                        color: #DCF2F1;
                     }
                 }
             }

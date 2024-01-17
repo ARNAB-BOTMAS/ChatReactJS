@@ -6,7 +6,7 @@ import { db, storage } from '../firebase';
 import { v4 as uuid } from 'uuid';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
-const Input = () => {
+const PhoneInput = () => {
   const [text, setText] = useState('');
   const [img, setImg] = useState(null);
   const [file, setFile] = useState(null);
@@ -80,37 +80,20 @@ const Input = () => {
 
   return (
     <div className='input'>
-      <input
-        type='text'
-        placeholder='Type something...'
-        className='messageSend'
-        onChange={(e) => setText(e.target.value)}
-        value={text}
-      />
+      <input type='text' placeholder='Type something...' className='messageSend' onChange={(e) => setText(e.target.value)} value={text} />
       <div className='send'>
-        <label>
+        <input type='file' id='file' className='inputfile' onChange={(e) => setFile(e.target.files)} />
+        <label htmlFor='file'>
+          <span>
             <i className='fa-solid fa-paperclip'></i>
-          <input
-            type='file'
-            id='file'
-            className='inputfile'
-            onChange={(e) => setFile(e.target.files)}
-          />
+          </span>
         </label>
-  
-        <label>
+        <input type='file' accept='image/*' id='image' className='inputfile' onChange={(e) => setImg(e.target.files)} />
+        <label htmlFor='image'>
           <span>
             <i className='fa-solid fa-image'></i>
           </span>
-          <input
-            type='file'
-            accept='image/*'
-            id='image'
-            className='inputfile'
-            onChange={(e) => setImg(e.target.files)}
-          />
         </label>
-  
         <button onClick={handleSend}>
           <span>
             <i className='fa-solid fa-paper-plane'></i> Send
@@ -119,5 +102,6 @@ const Input = () => {
       </div>
     </div>
   );
-}
-export default Input;
+};
+
+export default PhoneInput;
