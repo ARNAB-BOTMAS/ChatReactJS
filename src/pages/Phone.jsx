@@ -17,7 +17,9 @@ const Phone = () => {
         <div className={`phone ${isSidebarOpen ? 'sidebar-open' : ''}`}>
             <div className="container">
                 <nav className="navbar">
-                    <span>{data.user?.displayName}</span>
+                    <span>
+                        {data.user?.displayName ? data.user.displayName : "Welcome"}                    
+                    </span>
                     <div className={`hamburger-icon ${isSidebarOpen ? 'cross' : ''}`} onClick={toggleSidebar}>
                         <span></span>
                         <span></span>

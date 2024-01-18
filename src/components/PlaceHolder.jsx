@@ -1,9 +1,11 @@
 import React from 'react';
+import Lottie from 'lottie-react';
+import MegAnimation from '../animation/Message.json';
 
 const PlaceHolder = () => {
     return (
         <div className='place'>
-            Place Holder
+            <Lottie loop={true} animationData={MegAnimation} className='lottieAni'/>
         </div>
     );
 }

@@ -12,7 +12,9 @@ const Chat = () => {
   return (
     <div className="chat">
       <div className="chatInfo">
-        <span className="name">{data.user?.displayName}</span>
+        <span className="name">
+          {data.user?.displayName ? data.user.displayName : "Welcome"}
+        </span>
         <div className="chatIcons">
             <span><i class="fa-solid fa-video"></i></span>
             <span><i class="fa-solid fa-user-plus"></i></span>

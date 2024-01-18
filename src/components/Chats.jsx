@@ -43,7 +43,7 @@ const Chats = () => {
                         <p>
                             {chat[1].lastMessage?.text
                                 ? chat[1].lastMessage.text
-                                : "Attach file"}
+                                : "You have a new message"}
                         </p>
                     </div>
                 </div>
