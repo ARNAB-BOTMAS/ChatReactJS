@@ -70,6 +70,7 @@ const Search = () => {
         <div className='search'>
             <div className="searchForm">
                 <input type="text" placeholder='Find User....' onKeyDown={handleKey} onChange={e=>setUsername(e.target.value)} value={username}/>
+                <button onClick={handleSearch} className='SearchBtn'><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <span className={`error-message ${err ? '' : 'error-message-hidden'}`}>
                 User Not Found!!!

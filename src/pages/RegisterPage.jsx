@@ -54,8 +54,8 @@ const RegisterPage = () => {
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
-    const email = e.target[2].value;
-    const password = e.target[1].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
     const file = e.target[3].files[0];
 
     try {
@@ -113,8 +113,8 @@ const RegisterPage = () => {
           <span className="title">Register</span>
           <form className="desktopFromField" onSubmit={handleSubmit}>
             <input type="text" name="username" id="username" placeholder="Username" />
-            <input type="password" name="password" id="password" placeholder="Password" />
             <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="password" name="password" id="password" placeholder="Password" />
             <input type="file" name="profilepic" id="profilepic" accept='image/*' className="profilepic" />
             <label htmlFor="profilepic">
               <Lottie loop={true} animationData={animation} className="desktop-profile" />

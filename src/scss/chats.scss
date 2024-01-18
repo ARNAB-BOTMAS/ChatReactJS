@@ -87,6 +87,9 @@
             }
             .search{
                 border-bottom: 1px solid gray;
+                .SearchBtn{
+                    display: none;
+                }
                 .error-message {
                     color: red;
                     opacity: 1;

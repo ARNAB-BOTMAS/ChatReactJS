@@ -58,6 +58,17 @@
                 padding: 10px 5px;
                 border-bottom: 1px solid #2D3250;
                 .searchForm {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    button{
+                        text-align: center;
+                        padding: 15px;
+                        background: #506cca;
+                        border: none;
+                        color: #fff;
+                        font-size: 18px;
+                    }
                     input {
                         width: 90%;
                         border: none;
@@ -69,6 +80,10 @@
                             color: #2D3250;
                         }
                     }
+                }
+                .error-message{
+                    display: block;
+                    color: red;
                 }
                 .error-message-hidden{
                     display: none;
