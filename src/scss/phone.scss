@@ -8,7 +8,7 @@
             display: flex;
             justify-content: space-between;
             background: #365486;
-            height: 5vh; /* Adjusted height for better visibility */
+            height: 6vh; /* Adjusted height for better visibility */
             // padding: 10px; /* Adjusted padding for better visibility */
             // padding-right: 10px;
             color: #DCF2F1;
@@ -50,7 +50,7 @@
 
         .sidebar {
             width: 90%;
-            height: 95vh;
+            height: 94vh;
             background: #7077A1;
             position: absolute;
 
@@ -153,7 +153,7 @@
         .chat {
             // flex: 2;
             overflow: hidden;
-            height: 95vh; /* Corrected typo: 100hv to 100vh */
+            height: 94vh; /* Corrected typo: 100hv to 100vh */
             
             .chatInfo {
                 .name {
@@ -169,7 +169,7 @@
                 background: #ddddf7;
                 // margin-top: 60px;
                 padding: 10px;
-                height: calc(100% - 8.5%);
+                height: calc(100% - 9.5%);
                 overflow-y: auto; /* Changed to overflow-y for vertical scrollbar */
                 overflow-x: hidden;
 
