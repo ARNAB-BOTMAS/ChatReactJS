@@ -2,14 +2,15 @@
     font-size: large;
 
     .container {
+        height: 100vh;
         nav {
-            position: fixed;
+            // position: fixed;
             display: flex;
             justify-content: space-between;
             background: #365486;
-            height: 60px; /* Adjusted height for better visibility */
+            height: 5vh; /* Adjusted height for better visibility */
             // padding: 10px; /* Adjusted padding for better visibility */
-            padding-right: 50px;
+            // padding-right: 10px;
             color: #DCF2F1;
             width: 100%;
             align-items: center;
@@ -20,7 +21,8 @@
                 display: flex;
                 flex-direction: column;
                 cursor: pointer;
-                padding-right: 10px;
+                // padding-right: 10px;
+                margin-right: 10px;
 
                 span {
                     display: block;
@@ -48,7 +50,7 @@
 
         .sidebar {
             width: 90%;
-            height: 100vh;
+            height: 95vh;
             background: #7077A1;
             position: absolute;
 
@@ -149,9 +151,9 @@
         }
 
         .chat {
-            flex: 2;
+            // flex: 2;
             overflow: hidden;
-            height: 100vh; /* Corrected typo: 100hv to 100vh */
+            height: 95vh; /* Corrected typo: 100hv to 100vh */
             
             .chatInfo {
                 .name {
@@ -165,9 +167,9 @@
 
             .messages {
                 background: #ddddf7;
-                margin-top: 60px;
+                // margin-top: 60px;
                 padding: 10px;
-                height: calc(100% - 140px);
+                height: calc(100% - 8.5%);
                 overflow-y: auto; /* Changed to overflow-y for vertical scrollbar */
                 overflow-x: hidden;
 
