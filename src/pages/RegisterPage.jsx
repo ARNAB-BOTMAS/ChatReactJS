@@ -63,8 +63,8 @@ const RegisterPage = () => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
       // Create a unique image name
-      const date = new Date().getTime();
-      const storageRef = ref(storage, `${displayName + date}`);
+      /* const date = new Date().getTime(); */
+      const storageRef = ref(storage, res.user.uid);
 
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {

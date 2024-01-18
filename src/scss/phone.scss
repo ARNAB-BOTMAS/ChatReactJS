@@ -227,7 +227,7 @@
                             border-radius: 0 10px 10px 10px;
                             max-width: max-content;
                             align-items: flex-end;
-                            flex-direction: row-reverse;
+                            // flex-direction: row-reverse;
                             cursor: pointer;
                             .download{
                                 button{
@@ -240,7 +240,7 @@
                             .files{
                                 display: flex;
                                 align-items: flex-end;
-                                flex-direction: row-reverse;
+                                // flex-direction: row-reverse;
                                 gap: 20px;
                                 .downloadFile{
                                     font-size: 30px;
@@ -270,6 +270,10 @@
                                 color: #fff;
                                 border-radius: 10px 0px 10px 10px;
                                 max-width: max-content;
+                                flex-direction: row-reverse;
+                                .files{
+                                    flex-direction: row-reverse;
+                                }
                                 button{
                                     // padding: 10px;
                                     color: #fff;

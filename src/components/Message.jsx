@@ -39,7 +39,7 @@ const Message = ({ message }) => {
         {message.file && 
           <div className="fileContent" onClick={handelDolwnloadFile}>
             <div className="download">
-              <button onClick={handelDolwnloadFile}><i class="fa-solid fa-download fa-bounce"></i></button>
+              <button onClick={handelDolwnloadFile}><i class="fa-solid fa-download"></i></button>
             </div>  
             <div class="files"> 
               <span>
