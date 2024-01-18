@@ -37,7 +37,12 @@ const Chats = () => {
                 <img src={chat[1].userInfo.photoURL} alt="" />
                 <div className="userChatInfo">
                     <span>{chat[1].userInfo.displayName}</span>
-                    <p>{chat[1].lastMessage?.text}</p>
+                    <p>
+                        {chat[1].lastMessage?.text
+                            ? chat[1].lastMessage.text
+                            : "Attach file"}
+                    </p>
+
                 </div>
             </div>
         ))}

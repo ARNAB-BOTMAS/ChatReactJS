@@ -39,6 +39,10 @@ const LoginPage = () => {
     const goBack = () => {
       navigate(-1);
     };
+
+    if(auth.currentUser){
+      navigate("/chats");
+    }
   
     const handleSubmit = async (e) => {
       setLoading(true);
@@ -48,8 +52,9 @@ const LoginPage = () => {
   
       try {
         setLoading(true);
-        await signInWithEmailAndPassword(auth, email, password);
-        navigate('/chats');
+        await signInWithEmailAndPassword(auth, email, password).then(()=>{
+          navigate('/chats');
+        });
       } catch (err) {
         setErr(true);
         setLoading(false);

@@ -11,7 +11,12 @@ const Message = ({ message }) => {
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
-
+  const handelDolwnloadFile = () =>{
+    window.open(message.file);
+  }
+  const handelDolwnloadImg = () =>{
+    window.open(message.img);
+  }
   return (
     <div
       ref={ref}
@@ -29,8 +34,24 @@ const Message = ({ message }) => {
         {/* <span>just now</span> */}
       </div>
       <div className="messageContent">
-        <p>{message.text}</p>
-        {message.img && <img src={message.img} alt="" />}
+        {message.text && <p>{message.text}</p>}
+        {message.img && <img src={message.img} alt="" onClick={handelDolwnloadImg}/>}
+        {message.file && 
+          <div className="fileContent" onClick={handelDolwnloadFile}>
+            <div className="download">
+              <button onClick={handelDolwnloadFile}><i class="fa-solid fa-download fa-bounce"></i></button>
+            </div>  
+            <div class="files"> 
+              <span>
+                File
+              </span>
+              <span className="downloadFile">
+                <i class="fa-solid fa-file-pdf"></i>  
+              </span> 
+            </div>
+
+          </div>
+        }
       </div>
     </div>
   );

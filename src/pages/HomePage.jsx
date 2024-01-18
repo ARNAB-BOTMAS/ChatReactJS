@@ -1,5 +1,6 @@
 import Design from "../components/Design2";
 import { useNavigate } from 'react-router-dom';
+import { auth } from "../firebase";
 const HomePage = () => {
     const navigate = useNavigate();
     
@@ -8,6 +9,9 @@ const HomePage = () => {
     }
     const register = () =>{
         navigate('/register');
+    }
+    if(auth.currentUser){
+        navigate("/chats");
     }
     return(
         <div className="desktopHome">

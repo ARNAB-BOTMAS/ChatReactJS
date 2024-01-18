@@ -47,7 +47,9 @@ const RegisterPage = () => {
   const goBack = () => {
     navigate(-1);
   };
-
+  if(auth.currentUser){
+    navigate("/chats");
+  }
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();

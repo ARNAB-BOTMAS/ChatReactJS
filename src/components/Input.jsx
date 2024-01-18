@@ -5,16 +5,27 @@ import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase
 import { db, storage } from '../firebase';
 import { v4 as uuid } from 'uuid';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { ScaleLoader } from 'react-spinners';
+import { css } from '@emotion/react';
 
+const override = css`
+  display:block;
+  margin: 0 auto;
+  height: '5px';
+  border-color: red;
+`;
 const Input = () => {
   const [text, setText] = useState('');
   const [img, setImg] = useState(null);
   const [file, setFile] = useState(null);
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
+  const [loading, setLoading] = useState(false);
+
 
   const handleSend = async () => {
     try {
+      setLoading(true);
       if (img) {
         const imageRef = ref(storage, uuid());
         await uploadBytesResumable(imageRef, img[0]).then(() => {
@@ -30,6 +41,7 @@ const Input = () => {
             });
           });
         });
+        setLoading(false);
       } else if (file) {
         const fileRef = ref(storage, uuid());
         await uploadBytesResumable(fileRef, file[0]).then(() => {
@@ -45,6 +57,7 @@ const Input = () => {
             });
           });
         });
+        setLoading(false);
       } else {
         await updateDoc(doc(db, 'chats', data.chatId), {
           messages: arrayUnion({
@@ -52,8 +65,9 @@ const Input = () => {
             text,
             senderId: currentUser.uid,
             date: Timestamp.now(),
-          }),
+          })
         });
+        setLoading(false);
       }
 
       await updateDoc(doc(db, 'userChats', currentUser.uid), {
@@ -69,11 +83,12 @@ const Input = () => {
         },
         [`${data.chatId}.date`]: serverTimestamp(),
       });
-
+      setLoading(false);
       setText('');
       setImg(null);
       setFile(null);
     } catch (error) {
+      setLoading(false);
       console.error('Error handling send:', error);
     }
   };
@@ -93,6 +108,7 @@ const Input = () => {
           <input
             type='file'
             id='file'
+            accept='*/*'
             className='inputfile'
             onChange={(e) => setFile(e.target.files)}
           />
@@ -111,11 +127,16 @@ const Input = () => {
           />
         </label>
   
-        <button onClick={handleSend}>
-          <span>
-            <i className='fa-solid fa-paper-plane'></i> Send
-          </span>
+        <button onClick={handleSend} disabled={loading}>
+          {loading ? (
+            <ScaleLoader css={override} size={9} color={'#fff'} loading={loading} />
+          ) : (
+            <span>
+              <i className='fa-solid fa-paper-plane'></i> Send
+            </span>
+          )}
         </button>
+
       </div>
     </div>
   );
