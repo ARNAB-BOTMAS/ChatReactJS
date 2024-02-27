@@ -14,7 +14,9 @@ import './scss/phone.scss';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from './contex/AuthContext';
 import { useContext } from 'react';
+// import dotenv from 'dotenv';
 
+// dotenv.config();
 function App() {
   const {currentUser} = useContext(AuthContext);
   
